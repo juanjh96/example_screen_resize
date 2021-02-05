@@ -29,9 +29,6 @@ class BuilderMaterialApp {
 }
 
 class ResizeBloc extends ChangeNotifier {
-  bool flag = false;
-  double padding;
-
   @override
   void notifyListeners() {
     super.notifyListeners();
