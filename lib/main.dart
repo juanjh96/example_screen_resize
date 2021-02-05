@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rezize_tablet/resize.dart';
+import 'package:resize_tablet/resize.dart';
 
 void main() => runApp(
       MyApp(),
@@ -26,90 +26,36 @@ class PageExample1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Scaffold(
-        body: Column(
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => YellowPage(),
-                  ),
-                );
-              },
-              child: Container(
-                color: Colors.yellow,
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: Center(
-                  child: Text('Tap me to navigate yellow screen'),
-                ),
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              border: Border.all(
+                color: Colors.green,
+                width: 10,
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => GreenPage(),
-                  ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.green,
-                    border: Border.all(color: Colors.blueAccent, width: 20)),
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: Center(
-                  child: Text('Tap me to navigate green screen'),
-                ),
+            height: 365.5,
+            child: const Center(
+              child: Text('static value 365.5'),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.green,
+              border: Border.all(
+                color: Colors.yellow,
+                width: 10,
               ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class GreenPage extends StatelessWidget {
-  const GreenPage({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pop(context);
-      },
-      child: Scaffold(
-        backgroundColor: Colors.green,
-        body: Center(
-          child: Container(
-            child: Text('Tap me to return'),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class YellowPage extends StatelessWidget {
-  const YellowPage({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pop(context);
-      },
-      child: Scaffold(
-        backgroundColor: Colors.yellow,
-        body: Center(
-          child: Container(
-            child: Text('Tap me to return'),
-          ),
-        ),
+            ),
+            height: 365.5,
+            child: const Center(
+              child: Text('static value 365.5'),
+            ),
+          )
+        ],
       ),
     );
   }
